@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>INZALO KAMQHOKO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spring Boot App</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+<header>
+    <h1>Welcome to My Spring Boot App!</h1>
+</header>
 
+<main>
+    <form action="/submit" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Submit</button>
+    </form>
+</main>
+
+<script src="/static/js/main.js"></script>
 </body>
 </html>
