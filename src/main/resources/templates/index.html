@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Spring Boot App</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Spring Boot Form</title>
 </head>
 <body>
-<header>
-    <h1>Welcome to My Spring Boot App!</h1>
-</header>
+<h1>Welcome to My Spring Boot App!</h1>
 
-<main>
-    <form action="/submit" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <button type="submit">Submit</button>
-    </form>
-</main>
+<form action="/submit" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <button type="submit">Submit</button>
+</form>
 
-<script src="/static/js/main.js"></script>
+<hr>
+
+<h2>Submitted Usernames:</h2>
+<ul>
+    <li th:each="user : ${usernames}" th:text="${user.name}"></li>
+</ul>
 </body>
 </html>
