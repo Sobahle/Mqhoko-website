@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<Html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Spring Boot Form</title>
+    <title>Submit User Info</title>
 </head>
 <body>
-<h1>Welcome to My Spring Boot App!</h1>
+<h1>Submit Your Info</h1>
 
-<form action="/submit" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+<form action="/submit" method="post" th:object="${user}">
+    <div>
+        <label>Full Name:</label>
+        <input type="text" th:field="*{fullName}" />
+        <p th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></p>
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" />
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+    </div>
+
+    <div>
+        <label>Age:</label>
+        <input type="number" th:field="*{age}" />
+        <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+    </div>
+
     <button type="submit">Submit</button>
 </form>
 
-<hr>
-
-<h2>Submitted Usernames:</h2>
+<h2>All Users:</h2>
 <ul>
-    <li th:each="user : ${usernames}" th:text="${user.name}"></li>
+    <li th:each="user : ${usernames}">
+        <span th:text="${user.fullName} + ' (' + ${user.email} + ', ' + ${user.age} + ')'"></span>
+    </li>
 </ul>
 </body>
-</html>
+</Html>
