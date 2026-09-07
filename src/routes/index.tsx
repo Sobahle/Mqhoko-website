@@ -120,7 +120,7 @@ export default function Index() {
           })}
         </div>
       </section>
-
+      
       <footer className="border-t border-border/60 py-10">
         <div className="mx-auto max-w-6xl px-6 text-center text-sm text-muted-foreground">
           <p>Inzalo yakwa Mqhoko · Compiled with care for the family.</p>

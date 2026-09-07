@@ -7,9 +7,7 @@ export type Person = {
   bio?: string;
 };
 
-/**
- * Mqhoko family lineage.
- */
+
 export const PEOPLE: Person[] = [
   {
     id: "mqhoko",
