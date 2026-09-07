@@ -3,6 +3,7 @@ import Index from "./routes/index";
 import Tree from "./routes/tree";
 import Person from "./routes/person.$id";
 import NotFound from "./routes/not-found";
+import Diagram from "./routes/diagram";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/tree" element={<Tree />} />
+        <Route path="/diagram" element={<Diagram />} />
         <Route path="/person/:id" element={<Person />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
